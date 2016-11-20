@@ -1,4 +1,15 @@
 # -*- coding: utf-8 -*-
+require 'yaml'
+
+config_files = [
+  YAML.load_file(File.dirname(__FILE__) + "/config/config.yml"),
+]
+
+config = {}
+config_files.each do |file|
+  file.each {|key, value| config[key] = value}
+end
+
 task:default => [:github_push, :heroku_deploy]
 
 task :github_push do
