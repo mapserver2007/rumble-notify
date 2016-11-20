@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+ruby '2.3.1'
+gem 'mechanize'
+gem 'clockwork'
+gem 'curb'
+gem 'log4r'
