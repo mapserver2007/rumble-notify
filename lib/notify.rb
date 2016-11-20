@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'curb'
-# E7Pc1A8uLoixVxCMJC2KINHYv0j1Knd0MHnqqcPmo0J
+
 class Notify
   URL = 'https://notify-api.line.me/api/notify'
 
