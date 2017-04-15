@@ -20,7 +20,7 @@ class TrendTweet
     lines = (site/'//*[@id="main"]/div/ul/li/div[2]')
     lines.each do |line|
       tmp_rt = line.search('b').inner_text.tr('RT', '').to_i
-      if tmp_rt > rt && MIN_RETWEET_NUM > rt
+      if tmp_rt > rt && tmp_rt > MIN_RETWEET_NUM
         rt = tmp_rt
         url = line.search('p[class="tweetName"]/a')[1].attribute("href").value
       end
@@ -29,7 +29,7 @@ class TrendTweet
     if rt > 0
       url = expand(url)
       source_site = @agent.get(url)
-      text_elem = (source_site/'//p[@class="TweetTextSize TweetTextSize--26px js-tweet-text tweet-text"]').last
+      text_elem = (source_site/'//p[@class="TweetTextSize TweetTextSize--jumbo js-tweet-text tweet-text"]').last
       text = text_elem.inner_text + " RT:#{rt}" unless text_elem.nil?
       result = "#{text}\n#{url}"
     end
