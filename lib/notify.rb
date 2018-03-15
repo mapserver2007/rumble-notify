@@ -30,7 +30,7 @@ class Notify
     response = Curl.post(URL, {message: text}) do |curl|
       curl.headers['Authorization'] = "Bearer #{get_access_token}"
     end
-    logger.info response.response_code
-    logger.info text
+    @logger.info response.response_code
+    @logger.info text
   end
 end
