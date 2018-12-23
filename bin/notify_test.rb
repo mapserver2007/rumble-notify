@@ -1,12 +1,11 @@
-# -*- coding: utf-8 -*-
-$: << File.dirname(__FILE__) + "/../lib"
+$LOAD_PATH << File.dirname(__FILE__) + '/../lib'
 require 'notify'
 require 'trend_tweet'
 require 'log4r'
 
 class TestNotifier
   def text
-    "test"
+    'test'
   end
 end
 

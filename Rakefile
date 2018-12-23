@@ -36,6 +36,10 @@ task :heroku_create do
   sh "heroku create --stack cedar-14 rumble-notify"
 end
 
+task :heroku_server_upgrade do
+  sh "heroku stack:set heroku-18 -a rumble-notify"
+end
+
 task :timezone do
   sh "heroku config:add TZ=Asia/Tokyo"
 end
