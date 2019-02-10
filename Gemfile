@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.4.5'
+ruby '2.5.3'
 gem 'mechanize'
 gem 'clockwork'
-gem 'nokogiri', '~> 1.8.0'
+gem "nokogiri", ">= 1.8.5"
 gem 'curb'
 gem 'log4r'
